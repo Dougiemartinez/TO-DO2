@@ -4,6 +4,8 @@
 		<title>Todo-List</title>
 		<!-- links main css file -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
 	</head>
 	<body>
 		<div class="wrap"></div>
@@ -42,7 +44,7 @@
 			<input type="text" name="new-task" placeholder="Add new item..."/> 
 		</form>
 	</body>
-	<scripts src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<scripts src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		//calls add_task function 
 		add_task();
@@ -52,7 +54,7 @@
 				var new_task = $('.add-new-task input[name=new-task]').val();
 				if (new_task != '') {
 					//goes to add-task.php
-					$.post('includes/add-task.php', {task: new_task}, function(data){
+					$.post('includes/add-tasks.php', {task: new_task}, function(data){
 						$('add-new-task input[name=new-task]').val();
 						$(data).appendTo('task-list ul').hide().fadeIn();
 					});
@@ -64,7 +66,7 @@
 			var current_element = $(this);
 			var task_id = $(this).attr('id');
 			//calls delete-task.php
-			$.post('includes/delete-task.php'. {id: task_id}, function(){
+			$.post('includes/delete-task.php' , {id: task_id}, function(){
 				//calls variables
 				current_element.parent().fadeOut("fast", function(){
 					$(this).remove();
