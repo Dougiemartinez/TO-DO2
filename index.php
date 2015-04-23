@@ -9,8 +9,24 @@
 		<div class="wrap"></div>
 		<div class="task-list">
 			<ul>
-				<!-- inserts connect.php file into this div -->
-				<?php require("includes/connect.php"); ?>
+				<?php
+					// inserts connect.php file into this div
+					require("includes/connect.php"); 
+					$mysqli = new mysqli('localhost', 'root', 'root', 'todo');
+					$query = "SELECT * FROM tasks ORDER BY date ASC, time ASC";
+					if ($result = $mysqli->query($query)) {
+						$numrows = $result->num_rows;
+						if ($numrows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								$task_id = $row['id'];
+								$task_name = $row["task"];
+								echo "<li>
+								<span>'.task_name'
+								";
+							}
+						}
+					}
+				?>
 			</ul>
 		</div>
 		<!-- inserts a box for inserting text -->
