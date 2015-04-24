@@ -5,15 +5,65 @@
 
 body {
 	font: normal 14px 'Open Sans', Arial, sans-sarif;
-	color: #999;
-	background: #f1f1f1;
+
+	    background-image: url("../images/bgimage1.jpg");
+
+	    .carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+    }
+
+    .active {
+      opacity: 1;
+    }
+
+    .active.left,
+    .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
 }
 
+
+
+html, 
+body, 
+.carousel, 
+.carousel-inner, 
+.carousel-inner .item {
+  height: 100%;
+}
+
+.item:nth-child(1) {
+  background: darkred;
+}
+
+.item:nth-child(2) {
+  background: red;
+}
+
+.item:nth-child(3) {
+  background: orange;
+}
+
+}
 .wrap {
 	width: 400px;
 	margin: 0 auto;
 }
-
 .task-list {
 	width: 88px;
 	min-height: 300px;
