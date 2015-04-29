@@ -1,0 +1,1 @@
+{name: "knocks", type: "audio", src: "data/bgm/"},

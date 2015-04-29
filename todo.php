@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html
-</div>>
+</div>
 	<head>
 		<title>Todo-List</title>
 		<!-- links main css file -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/js" href="js/main.js">
+		<link rel="stylesheet" type="text/js" href="js/resources.js">
 	</head>
 	<body>
 		<div class="wrap"></div>
@@ -31,7 +32,7 @@
 								//echoes out the name and data
 								echo '<li>
 								<span>'. $task_name . '</span>
-								<img id = "' . $task_id . '" class = "delete-button" width = "10px" src = "images/close.svg"/>
+								<img id = "' . $task_id . '" class = "delete-button" width = "10px" src = "../images/close.svg"/>
 								</li>';
 							}
 						}
@@ -40,26 +41,10 @@
 			</ul>
 		</div>
 		<!-- inserts a box for inserting text -->
-		<form class="add-new-task" autocomplete = "off">
+		 <form class="add-new-task" autocomplete = "off"> -->
 			<input type="text" name="new-task" placeholder="Add new item..."/> 
-		</form>
-		<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
-	</body>
-	<scripts src="https://code.jquery.com/jquery-latest.min.js"></script>
+			</form>
+			</body>
 	<script>
 		//calls add_task function 
 		add_task();
